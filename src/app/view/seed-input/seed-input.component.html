@@ -1,1 +1,6 @@
-<p>seed-input works!</p>
+<div>
+    <label for="inputString">Enter seed sequence</label>
+    <input id="inputString" [(ngModel)]="inputString" placeHolder="12345">
+    <button (click)="validateInputString()">Validate input string</button>
+</div>
+<p>{{ validationMessage }}</p>
