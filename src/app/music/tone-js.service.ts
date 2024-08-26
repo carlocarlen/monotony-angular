@@ -8,6 +8,10 @@ export class ToneJsService {
 
   private notes = ["C2", "E2", "G2", "E2"];
   private index = -1;
+  private synth = new Tone.Synth().toDestination();
+  private chordLoop = new Tone.Loop((time) => {
+    this.synth.triggerAttackRelease(this.nextNote(), "4n");
+  }, "4n").start(0);
 
   constructor() { }
 
@@ -18,12 +22,6 @@ export class ToneJsService {
   }
 
   loopStart() {
-    const synth = new Tone.Synth().toDestination();
-
-    const chordLoop = new Tone.Loop((time) => {
-      synth.triggerAttackRelease(this.nextNote(), "4n");
-    }, "4n" ).start(0);
-
     Tone.getTransport().start();
   }
 
