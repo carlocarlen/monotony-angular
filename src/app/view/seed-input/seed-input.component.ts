@@ -29,10 +29,10 @@ export class SeedInputComponent {
     const uniqueChars = new Set();
 
     for (const char of input) {
-   //   if (!/ˆ[1-5]$/.test(char)) {
-   //     this.validationMessage = 'input string must contain only numbers from 1 to 5';
-   //     return false;
-   //   }
+      if ( char < '1' || char > '5') {
+        this.validationMessage = 'input string must contain only numbers from 1 to 5';
+        return false;
+      }
 
       if (uniqueChars.has(char)) {
         this.validationMessage = 'input string cannot repeat chars';
