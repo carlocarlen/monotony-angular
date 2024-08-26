@@ -18,7 +18,9 @@ export class RunStopButtonComponent {
     this.isPlaying = !this.isPlaying;
     this.label = this.isPlaying ? 'Stop' : 'Run';
     if (this.isPlaying) {
-      this.toneJsService.play();
+      this.toneJsService.loopStart();
+    } else {
+      this.toneJsService.loopStop();
     }
   }
 
