@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
+import { HomePageComponent } from './app/view/home-page/home-page.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
+  imports: [HomePageComponent],
   template: `
-    <h1>Hello from {{ name }}!</h1>
-    <a target="_blank" href="https://angular.dev/overview">
-      Learn more about Angular
-    </a>
+    <app-home-page><\app-home-page>
   `,
 })
 export class App {
