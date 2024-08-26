@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { GeneratorService } from '../../generator/generator.service';
 
 @Component({
   selector: 'app-seed-input',
@@ -13,9 +14,12 @@ export class SeedInputComponent {
   inputString = '';
   validationMessage = '';
 
+  constructor(private generatorService: GeneratorService){}
+
   validateInputString() {
     if (this.isValid(this.inputString)) {
       this.validationMessage = "Bravo! Let's start";
+      this.generatorService.setSeed(this.inputString);
     }
   }
 
