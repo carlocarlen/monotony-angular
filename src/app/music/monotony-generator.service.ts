@@ -9,11 +9,11 @@ export class MonotonyGeneratorService {
   private dummyNote = 'C2';
 
   private charToNoteMapping: { [key: string]: string } = {
-    '1': 'C3',
-    '2': 'D3',
-    '3': 'E3',
-    '4': 'F3',
-    '5': 'G3',
+    '1': 'C2',
+    '2': 'D2',
+    '3': 'E2',
+    '4': 'F2',
+    '5': 'G2',
   };
 
   constructor(
