@@ -17,5 +17,6 @@ export class TestButtonComponent {
 
   runTest(): void {
     this.result = this.generatorService.nextChar();
+    // this.result = 'you clicked me';
   }
 }
