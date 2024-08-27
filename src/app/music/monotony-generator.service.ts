@@ -26,10 +26,8 @@ export class MonotonyGeneratorService {
 
   nextNote(): string {
     const nextChar = this.generatorService.nextChar();
-    console.log('Playing ' + nextChar);
     const nextNote = this.charToNoteMapping[nextChar];
-    console.log('Playing note ' + nextNote);
-    return this.dummyNextNote();
+    return nextNote;
   }
 
   dummyNextNote(): string {
