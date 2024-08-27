@@ -29,8 +29,10 @@ export class RunStopButtonComponent implements OnInit {
     this.label = this.isPlaying ? 'Stop' : 'Run';
     if (this.isPlaying) {
       this.toneJsService.loopStart();
+      console.log('Loop is started');
     } else {
       this.toneJsService.loopStop();
+      
     }
   }
 

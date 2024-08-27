@@ -6,6 +6,8 @@ import { GeneratorService } from '../generator/generator.service';
 })
 export class MonotonyGeneratorService {
 
+  private dummyNote = 'C2';
+
   private charToNoteMapping: { [key: string]: string } = {
     '1': 'C3',
     '2': 'D3',
@@ -27,6 +29,16 @@ export class MonotonyGeneratorService {
     console.log('Playing ' + nextChar);
     const nextNote = this.charToNoteMapping[nextChar];
     console.log('Playing note ' + nextNote);
-    return nextNote;
+    return this.dummyNextNote();
+  }
+
+  dummyNextNote(): string {
+    if (this.dummyNote === 'C2') {
+      this.dummyNote = 'E2';
+    } else {
+      this.dummyNote = 'C2';
+    }
+    return this.dummyNote;
+
   }
 }
