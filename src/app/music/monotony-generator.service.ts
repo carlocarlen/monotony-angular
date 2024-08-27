@@ -7,11 +7,11 @@ import { GeneratorService } from '../generator/generator.service';
 export class MonotonyGeneratorService {
 
   private charToNoteMapping: { [key: string]: string } = {
-    '1': 'C',
-    '2': 'D',
-    '3': 'E',
-    '4': 'F',
-    '5': 'G',
+    '1': 'C3',
+    '2': 'D3',
+    '3': 'E3',
+    '4': 'F3',
+    '5': 'G3',
   };
 
   constructor(
@@ -24,6 +24,9 @@ export class MonotonyGeneratorService {
 
   nextNote(): string {
     const nextChar = this.generatorService.nextChar();
-    return this.charToNoteMapping[nextChar];
+    console.log('Playing ' + nextChar);
+    const nextNote = this.charToNoteMapping[nextChar];
+    console.log('Playing note ' + nextNote);
+    return nextNote;
   }
 }

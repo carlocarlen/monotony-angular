@@ -16,10 +16,12 @@ export class RunStopButtonComponent implements OnInit {
   constructor(
     private toneJsService: ToneJsService,
     private monotony: MonotonyGeneratorService, 
-  ){}
+  ){
+    this.toneJsService.setNextNote(this.monotony.nextNote);
+  }
 
   ngOnInit() {
-    this.toneJsService.setNextNote(this.monotony.nextNote);
+   // this.toneJsService.setNextNote(this.monotony.nextNote);
   }
 
   toggleMusic() {
