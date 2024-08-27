@@ -15,8 +15,13 @@ describe('GeneratorService', () => {
   });
 
   it('shold produce the correct sequence', () => {
-    expect(service.nextChar()).toBe('1');
-    expect(service.nextChar()).toBe('2');
-    // ... and so on 
+    const expected = ['1', '2', '3', '4', '5',
+                      '1', '2', '3', '4', '5',
+                      '1', '3', '5', '2', '4',
+                      '1', '3', '5', '2', '4'];
+    for ( let expectedNextChar of expected ) {
+      expect(service.nextChar()).toBe(expectedNextChar); 
+    }
+
   })
 });
