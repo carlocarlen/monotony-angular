@@ -37,6 +37,6 @@ export class MonotonyGeneratorService {
       this.dummyNote = 'C2';
     }
     return this.dummyNote;
-
   }
+  
 }
