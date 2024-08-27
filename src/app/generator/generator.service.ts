@@ -7,7 +7,7 @@ export class GeneratorService {
 
   private seed: string[] = ['1','2','3','4','5','1','2','3','4','5'];
   private currentBatch: string[] = this.seed.slice();
-  private currentIndex = 0;
+  private currentIndex = -1;
   private maxIndex = 10;
 
   constructor() { }
