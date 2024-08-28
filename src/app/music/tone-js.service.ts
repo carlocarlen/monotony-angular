@@ -12,7 +12,7 @@ export class ToneJsService {
 
   private synth = new Tone.Synth().toDestination();
   private chordLoop = new Tone.Loop((time) => {
-    this.synth.triggerAttackRelease(this.nextNote(), "4n");
+    this.synth.triggerAttackRelease(this.nextNote(), "4n", time);
   }, "4n").start(0);
 
   constructor() { }

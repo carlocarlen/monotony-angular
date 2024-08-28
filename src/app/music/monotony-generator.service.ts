@@ -38,5 +38,9 @@ export class MonotonyGeneratorService {
     }
     return this.dummyNote;
   }
+
+  dummyFromGenerator(): string {
+    return this.dummyNote;
+  }
   
 }
