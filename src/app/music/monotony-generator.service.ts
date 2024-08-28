@@ -40,6 +40,7 @@ export class MonotonyGeneratorService {
   }
 
   dummyFromGenerator(): string {
+    this.dummyNote = 'C2'; // Why the initialized note is not taken into account?
     return this.dummyNote;
   }
   

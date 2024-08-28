@@ -11,9 +11,7 @@ export class ToneJsService {
   private nextNote: () => string = this.defaultNextNote;
 
   private synth = new Tone.Synth().toDestination();
-  private chordLoop = new Tone.Loop((time) => {
-    this.synth.triggerAttackRelease(this.nextNote(), "4n", time);
-  }, "4n").start(0);
+  private chordLoop: any = undefined;
 
   constructor() { }
 
@@ -28,6 +26,11 @@ export class ToneJsService {
   }
 
   loopStart() {
+    if (this.chordLoop === undefined ) {
+      this.chordLoop = new Tone.Loop((time) => {
+        this.synth.triggerAttackRelease(this.nextNote(), "4n", time)
+      }, "4n").start(0);
+    }
     Tone.getTransport().start();
   }
 
