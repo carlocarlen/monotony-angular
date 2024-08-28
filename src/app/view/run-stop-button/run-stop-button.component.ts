@@ -19,7 +19,7 @@ export class RunStopButtonComponent implements OnInit {
   ){  }
 
   ngOnInit() {
-    this.toneJsService.setNextNote(this.monotony.dummyFromGenerator);
+    this.toneJsService.setNextNote(() => this.monotony.dummyFromGenerator());
   }
 
   toggleMusic() {
